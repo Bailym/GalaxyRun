@@ -408,9 +408,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97735e84c8a8df24391678ac2f799db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryShot: {fileID: 8704366859372600023, guid: 2486eef9e2861b1499aac1ecc0c9ef51, type: 3}
-  secondaryShot: {fileID: 8321061317906025796, guid: d053d9bf26b2bc84791569577c24a548, type: 3}
-  blasterSpeed: 0.5
+  primaryShot: {fileID: 2977085281634764869, guid: 2108f1926bea8d84f9569d0fccb557c7, type: 3}
+  secondaryShot: {fileID: 8704366859372600023, guid: 2486eef9e2861b1499aac1ecc0c9ef51, type: 3}
+  leftBlasterSpeed: 0.5
+  rightBlasterSpeed: 5
 --- !u!1 &221326427
 GameObject:
   m_ObjectHideFlags: 0
