@@ -16,11 +16,22 @@ public class enemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //if no health destroy object.
         if (health <= 0)
         {
             Destroy(gameObject);
         }
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //if shot decrease health
+        if (collision.CompareTag("Shot"))
+        {
+            health--;
+            Destroy(collision.gameObject);
+        }
+
     }
 }
