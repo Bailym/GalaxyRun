@@ -16,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Combat
-  - 
+  - UI
   - 
   - 
   - 
@@ -50,4 +50,7 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 1090862537
+    locked: 0
+  - name: UI
+    uniqueID: 829214305
     locked: 0

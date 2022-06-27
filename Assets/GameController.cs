@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -10,9 +11,11 @@ public class GameController : MonoBehaviour
     public List<GameObject> aliveEnemies;
     public List<GameObject> spawnPoints;
     public float playerHealth = 100f;
+    public TextMeshProUGUI healthText;
     // Start is called before the first frame update
     void Start()
     {
+        healthText.text = "Health: " + playerHealth;
         BuildWave(1); 
     }
 
@@ -30,6 +33,8 @@ public class GameController : MonoBehaviour
         {
             Debug.Log("Dead!");
         }
+
+        healthText.text = "Health: " + playerHealth;
     }
 
 
