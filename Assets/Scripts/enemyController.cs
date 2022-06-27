@@ -7,9 +7,11 @@ public class enemyController : MonoBehaviour
     public float speed = 1f;
     public int health = 1;
     public bool hasShield = false;
+    private GameObject[] destinations;
     // Start is called before the first frame update
     void Start()
     {
+        destinations = GameObject.FindGameObjectsWithTag("Destination");
         
     }
 
