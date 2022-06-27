@@ -48,4 +48,4 @@ MonoBehaviour:
   - {fileID: 2067815751436821089, guid: 2812cdb2da98d494aad2694a0e336985, type: 3}
   aliveEnemies: []
   spawnPoints:
-  - {fileID: 0}
+  - {fileID: 5315651635500999594, guid: f76753353be22564f8cacac7ebbfebff, type: 3}
