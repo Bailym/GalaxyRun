@@ -41,11 +41,16 @@ public class enemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.CompareTag("Destination"));
         //if shot decrease health
         if (collision.CompareTag("Shot"))
         {
             health--;
             Destroy(collision.gameObject);
+        }
+        else if (collision.CompareTag("Destination"))
+        {
+            transform.position = new Vector2(Random.Range(-1f, 1f),2.8f);
         }
 
     }
