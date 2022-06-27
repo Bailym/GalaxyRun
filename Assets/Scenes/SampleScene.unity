@@ -2571,6 +2571,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511656f46dec13646a9c93af6d6bfc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveNumber: 1
+  T1enemiesPool:
+  - {fileID: 2067815751436821089, guid: 2812cdb2da98d494aad2694a0e336985, type: 3}
 --- !u!4 &1779224293
 Transform:
   m_ObjectHideFlags: 0
