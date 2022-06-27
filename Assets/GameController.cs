@@ -5,7 +5,7 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
-    public int waveNumber = 0;
+    public int waveNumber = 1;
     public GameObject player;
     public List<GameObject> T1enemiesPool;
     public List<GameObject> aliveEnemies;
@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         healthText.text = "Health: " + playerHealth;
-        BuildWave(1); 
+        BuildWave(waveNumber); 
     }
 
     // Update is called once per frame
@@ -48,9 +48,9 @@ public class GameController : MonoBehaviour
             GameObject newEnemy;    //object to be added to round
 
             //from 0 to total enemies number (offset * round number)
-            for (int i = 0; i <= randOffset * n; i++)
+            for (int i = 0; i < randOffset * n; i++)
             {
-                newEnemy = T1enemiesPool[Random.Range(0, T1enemiesPool.Count-1)];
+                newEnemy = T1enemiesPool[Random.Range(0, T1enemiesPool.Count)];
                 aliveEnemies.Add(newEnemy);
             }
 
@@ -62,12 +62,17 @@ public class GameController : MonoBehaviour
     void CommenceWave(List<GameObject> list)
     {
         GameObject spawnPoint;  //random spawn point from spawnPoints
-        //spawn the enemies 
-        for (int i = 0; i < aliveEnemies.Count;i++)
+        int numberOfSpawns = spawnPoints.Count;
+
+        for (int i = 0; i < aliveEnemies.Count;)   
         {
-            spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count - 1)];   //choose a random spawnpoint
-            
-            Instantiate(list[i],spawnPoint.transform.position,Quaternion.identity); //spawn enemy
-        }
+            for( int j = 0; j < numberOfSpawns; j++)
+            {
+                spawnPoint = spawnPoints[j];   //choose a random spawnpoint
+                Instantiate(list[i], spawnPoint.transform.position, Quaternion.identity); //spawn enemy
+                i++;
+            }
+                
+        }                                  
     }
 }

@@ -9,7 +9,7 @@ public class enemyController : MonoBehaviour
     public bool hasShield = false;
     public float collideDamage = 12;
     private GameObject[] destinations;
-    private GameObject currentDestination;
+    public GameObject currentDestination;
     private Vector2 vectorFromDestination;
     private Rigidbody2D body;
     // Start is called before the first frame update
