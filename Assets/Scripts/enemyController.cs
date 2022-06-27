@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemyController : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed = 20f;
     public int health = 1;
     public bool hasShield = false;
     public float collideDamage = 12;
@@ -32,12 +32,13 @@ public class enemyController : MonoBehaviour
         }
 
         vectorFromDestination = currentDestination.transform.position - transform.position;   //work out vector from destination.
+        vectorFromDestination.Normalize();
+
     }
 
     private void FixedUpdate()
     {
-        body.velocity = vectorFromDestination * speed * Time.deltaTime;
-        
+        body.velocity = vectorFromDestination * speed * Time.deltaTime; //apply movement to rigidbody
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
