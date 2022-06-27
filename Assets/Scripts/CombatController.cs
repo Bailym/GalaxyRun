@@ -21,7 +21,7 @@ public class CombatController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         //update the blaster origin point
         blasterPointLeft = transform.GetChild(0).transform.position;
