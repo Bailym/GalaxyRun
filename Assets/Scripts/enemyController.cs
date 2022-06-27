@@ -8,6 +8,7 @@ public class enemyController : MonoBehaviour
     public int health = 1;
     public bool hasShield = false;
     public float collideDamage = 12;
+    private GameController game;
     private GameObject[] destinations;
     public GameObject currentDestination;
     private Vector2 vectorFromDestination;
@@ -15,6 +16,8 @@ public class enemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //load gamemanager
+        game = FindObjectOfType<GameController>();
         //load any destination GameObjects
         destinations = GameObject.FindGameObjectsWithTag("Destination");
         //Choose a random destination.
@@ -28,6 +31,7 @@ public class enemyController : MonoBehaviour
         //if no health destroy object.
         if (health <= 0)
         {
+            game.removeEnemy(); //tell game manager to update enemy list
             Destroy(gameObject);
         }
 

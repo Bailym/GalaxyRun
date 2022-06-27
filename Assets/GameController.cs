@@ -22,6 +22,19 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //when there are no alive enemies
+        if (aliveEnemies[0] == null && aliveEnemies.Count==1)
+        {
+            StartCoroutine(EndWave());
+        }
+        
+    }
+
+    public void removeEnemy()
+    {
+        //update alive Enemies (likely a better way)
+        aliveEnemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
         
     }
 
@@ -40,6 +53,7 @@ public class GameController : MonoBehaviour
 
     void BuildWave(int n)
     {
+        aliveEnemies.Clear();
         int randOffset = Random.Range(1, 5);    //used to add variety to each waves numbers
 
         //choose a tier of enemies to add depending on round number.
@@ -63,16 +77,29 @@ public class GameController : MonoBehaviour
     {
         GameObject spawnPoint;  //random spawn point from spawnPoints
         int numberOfSpawns = spawnPoints.Count;
+        int numberOfEnemies = list.Count;
+        numberOfSpawns = numberOfSpawns > numberOfEnemies ? 1 : numberOfSpawns; //if there are more spawns than enemies then use a single spawn.
 
-        for (int i = 0; i < aliveEnemies.Count;)   
+        for (int i = 0; i < list.Count-1;)   
         {
             for( int j = 0; j < numberOfSpawns; j++)
             {
                 spawnPoint = spawnPoints[j];   //choose a random spawnpoint
                 Instantiate(list[i], spawnPoint.transform.position, Quaternion.identity); //spawn enemy
+                
+
                 i++;
             }
                 
         }                                  
+    }
+
+    IEnumerator EndWave()
+    {
+        waveNumber++;
+        BuildWave(waveNumber);
+        yield return new WaitForSeconds(20);
+
+
     }
 }

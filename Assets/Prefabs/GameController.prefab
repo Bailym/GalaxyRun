@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511656f46dec13646a9c93af6d6bfc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveNumber: 4
+  waveNumber: 1
   player: {fileID: 5551284273485224140, guid: 86d7d35ec75beb24a85b3c0b064f5c45, type: 3}
   T1enemiesPool:
   - {fileID: 2067815751436821089, guid: 2812cdb2da98d494aad2694a0e336985, type: 3}
