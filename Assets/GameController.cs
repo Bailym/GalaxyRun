@@ -5,21 +5,31 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public int waveNumber = 0;
+    public GameObject player;
     public List<GameObject> T1enemiesPool;
     public List<GameObject> aliveEnemies;
     public List<GameObject> spawnPoints;
+    public float playerHealth = 100f;
     // Start is called before the first frame update
     void Start()
     {
-        BuildWave(1);
-        
-        
+        BuildWave(1); 
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void TakeDamage(float damage)
+    {
+        playerHealth -= damage;
+
+        if (playerHealth <= 0)
+        {
+            Debug.Log("Dead!");
+        }
     }
 
 

@@ -3394,6 +3394,10 @@ PrefabInstance:
       value: GameController
       objectReference: {fileID: 0}
     - target: {fileID: 4648210529719321556, guid: 68a990bba22515c4c8f5c0ea09de106e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5551284273485224140, guid: 86d7d35ec75beb24a85b3c0b064f5c45, type: 3}
+    - target: {fileID: 4648210529719321556, guid: 68a990bba22515c4c8f5c0ea09de106e, type: 3}
       propertyPath: spawnPoints.Array.data[0]
       value: 
       objectReference: {fileID: 5315651635500999594, guid: f76753353be22564f8cacac7ebbfebff, type: 3}

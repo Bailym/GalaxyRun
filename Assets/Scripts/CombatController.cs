@@ -8,6 +8,7 @@ public class CombatController : MonoBehaviour
 
     public GameObject primaryShot;
     public GameObject secondaryShot;
+    public GameController game;
     private Vector2 blasterPointLeft;
     private Vector2 blasterPointRight;
     public float leftBlasterSpeed = 0.5f;   //time between shots
@@ -17,6 +18,7 @@ public class CombatController : MonoBehaviour
 
     void Start()
     {
+        game = FindObjectOfType<GameController>();
  
     }
 
@@ -45,8 +47,22 @@ public class CombatController : MonoBehaviour
             //spawn the shot
             Instantiate(secondaryShot, blasterPointRight, Quaternion.identity);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //if player collides with an enemy
+        if (collision.CompareTag("Enemy"))
+        {
+            //get the enemies collideDamage value
+            float damageTaken = collision.gameObject.GetComponent<enemyController>().collideDamage;
+            //send to gamemanager to deduct health
+            game.TakeDamage(damageTaken);
+
+
+        }
 
     }
 
-    
+
 }
