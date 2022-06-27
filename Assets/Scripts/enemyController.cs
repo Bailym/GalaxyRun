@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class enemyController : MonoBehaviour
 {
-    public float speed = 1f;
+    public float speed = 10f;
     public int health = 1;
     public bool hasShield = false;
     private GameObject[] destinations;
+    private GameObject currentDestination;
+    private Vector2 vectorFromDestination;
+    private Rigidbody2D body;
     // Start is called before the first frame update
     void Start()
     {
+        //load any destination GameObjects
         destinations = GameObject.FindGameObjectsWithTag("Destination");
-        
+        //Choose a random destination.
+        currentDestination = destinations[Random.Range(0, destinations.Length)];
+        body = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -23,6 +29,13 @@ public class enemyController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        vectorFromDestination = currentDestination.transform.position - transform.position;   //work out vector from destination.
+    }
+
+    private void FixedUpdate()
+    {
+        body.velocity = vectorFromDestination * speed * Time.deltaTime;
         
     }
 

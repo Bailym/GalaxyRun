@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8405149850949263961}
   - component: {fileID: -565862998142950259}
   - component: {fileID: -2683906702480978092}
+  - component: {fileID: 1650057693496164913}
   m_Layer: 6
   m_Name: UFO 1
   m_TagString: Enemy
@@ -129,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f837662cbe21b404ba2a63d59606a277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 10
   health: 1
   hasShield: 0
 --- !u!70 &-2683906702480978092
@@ -148,3 +149,24 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00089970254, y: -0.0008998215}
   m_Size: {x: 0.2961745, y: 0.1845907}
   m_Direction: 1
+--- !u!50 &1650057693496164913
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067815751436821089}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
