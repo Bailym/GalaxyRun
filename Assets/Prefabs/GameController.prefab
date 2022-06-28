@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8112559813612317219
+--- !u!1 &301515161096015340
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8112559813612317221}
-  - component: {fileID: 8112559813612317220}
+  - component: {fileID: 301515161096015338}
+  - component: {fileID: 301515161096015339}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8112559813612317221
+--- !u!4 &301515161096015338
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8112559813612317219}
+  m_GameObject: {fileID: 301515161096015340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.1918724, y: -0.82519937, z: -1.1085173}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,13 +31,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8112559813612317220
+--- !u!114 &301515161096015339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8112559813612317219}
+  m_GameObject: {fileID: 301515161096015340}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 511656f46dec13646a9c93af6d6bfc4e, type: 3}
@@ -49,7 +49,7 @@ MonoBehaviour:
   - {fileID: 2067815751436821089, guid: 2812cdb2da98d494aad2694a0e336985, type: 3}
   - {fileID: 2067815751436821089, guid: 2812cdb2da98d494aad2694a0e336985, type: 3}
   - {fileID: 2067815751436821089, guid: 2812cdb2da98d494aad2694a0e336985, type: 3}
-  - {fileID: 2067815751436821089, guid: 2812cdb2da98d494aad2694a0e336985, type: 3}
+  - {fileID: 7058005112709916074, guid: 9360caed8fd2a814fba06644e98cb31c, type: 3}
   - {fileID: 1979319868630741999, guid: 7ee55149791517048854a1dce07f372e, type: 3}
   aliveEnemies: []
   spawnPoints:

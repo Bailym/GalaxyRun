@@ -86,8 +86,6 @@ public class GameController : MonoBehaviour
             {
                 spawnPoint = spawnPoints[j];   //choose a random spawnpoint
                 Instantiate(list[i], spawnPoint.transform.position, Quaternion.identity); //spawn enemy
-                
-
                 i++;
             }
                 

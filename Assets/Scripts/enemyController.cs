@@ -11,7 +11,7 @@ public class enemyController : MonoBehaviour
     private GameController game;
     private GameObject[] destinations;
     public GameObject currentDestination;
-    private Vector2 vectorFromDestination;
+    public Vector2 vectorFromDestination;
     private Rigidbody2D body;
     // Start is called before the first frame update
     void Start()
