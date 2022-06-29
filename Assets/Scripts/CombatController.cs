@@ -15,10 +15,12 @@ public class CombatController : MonoBehaviour
     public float rightBlasterSpeed = 5f;   //time between shots
     private float leftNextShot = 0; //when the next shot can be made
     private float rightNextShot = 0; //when the next shot can be made
+    private SpriteRenderer sprite;
 
     void Start()
     {
         game = FindObjectOfType<GameController>();
+        sprite = GetComponent<SpriteRenderer>();
  
     }
 
@@ -57,9 +59,8 @@ public class CombatController : MonoBehaviour
             //get the enemies collideDamage value
             float damageTaken = collision.gameObject.GetComponent<enemyController>().collideDamage;
             //send to gamemanager to deduct health
-            game.TakeDamage(damageTaken);
-
-
+            StartCoroutine(game.TakeDamage(damageTaken));
+           
         }
 
     }

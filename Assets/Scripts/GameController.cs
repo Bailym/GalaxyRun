@@ -12,11 +12,13 @@ public class GameController : MonoBehaviour
     public List<GameObject> spawnPoints;
     public float playerHealth = 100f;
     public TextMeshProUGUI healthText;
+    public bool playerInvulnerable;
     // Start is called before the first frame update
     void Start()
     {
         healthText.text = "Health: " + playerHealth;
         BuildWave(waveNumber); 
+        playerInvulnerable = false;
     }
 
     // Update is called once per frame
@@ -38,16 +40,31 @@ public class GameController : MonoBehaviour
         
     }
 
-    public void TakeDamage(float damage)
+    public IEnumerator TakeDamage(float damage)
     {
-        playerHealth -= damage;
+        Animator anim = player.GetComponent<Animator>();
 
-        if (playerHealth <= 0)
-        {
-            Debug.Log("Dead!");
+        if (!playerInvulnerable){
+
+            playerHealth -= damage; //subtract damage from health
+            //if health less than zero player is dead.
+            if (playerHealth <= 0)
+            {
+                Debug.Log("Dead!");
+            }
+            healthText.text = "Health: " + playerHealth;    //update UI
+
+            //animation
+            playerInvulnerable = true;  //player is invulnerable after taking damage
+            //play damage animation
+            anim.SetBool("isDamaged", true);
+            yield return new WaitForSeconds(5);
+            anim.SetBool("isDamaged", false);
+
+            playerInvulnerable = false;  //player is invulnerable after taking damage
+
         }
-
-        healthText.text = "Health: " + playerHealth;
+        
     }
 
 
@@ -84,9 +101,12 @@ public class GameController : MonoBehaviour
         {
             for( int j = 0; j < numberOfSpawns; j++)
             {
-                spawnPoint = spawnPoints[j];   //choose a random spawnpoint
-                Instantiate(list[i], spawnPoint.transform.position, Quaternion.identity); //spawn enemy
-                i++;
+                if (i < numberOfEnemies) //horrible fix*
+                {
+                    spawnPoint = spawnPoints[j];   //choose a random spawnpoint
+                    Instantiate(list[i], spawnPoint.transform.position, Quaternion.identity); //spawn enemy
+                }
+                i++;    
             }
                 
         }                                  

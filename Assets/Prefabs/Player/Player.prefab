@@ -172,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   primaryShot: {fileID: 2977085281634764869, guid: 2108f1926bea8d84f9569d0fccb557c7, type: 3}
   secondaryShot: {fileID: 8704366859372600023, guid: 2486eef9e2861b1499aac1ecc0c9ef51, type: 3}
+  game: {fileID: 301515161096015339, guid: 7e4cde10579a309468329b1cbf400506, type: 3}
   leftBlasterSpeed: 0.5
   rightBlasterSpeed: 5
 --- !u!1 &5551284275017664911
