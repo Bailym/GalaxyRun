@@ -54,8 +54,7 @@ public class GameController : MonoBehaviour
     void BuildWave(int n)
     {
         aliveEnemies.Clear();
-        int randOffset = 1;
-            //Random.Range(1, 5);    //used to add variety to each waves numbers
+        int randOffset = Random.Range(1, 5);    //used to add variety to each waves numbers
 
         //choose a tier of enemies to add depending on round number.
         if (n < 5)
