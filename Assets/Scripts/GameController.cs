@@ -54,7 +54,8 @@ public class GameController : MonoBehaviour
     void BuildWave(int n)
     {
         aliveEnemies.Clear();
-        int randOffset = Random.Range(1, 5);    //used to add variety to each waves numbers
+        int randOffset = 1;
+            //Random.Range(1, 5);    //used to add variety to each waves numbers
 
         //choose a tier of enemies to add depending on round number.
         if (n < 5)
@@ -80,7 +81,7 @@ public class GameController : MonoBehaviour
         int numberOfEnemies = list.Count;
         numberOfSpawns = numberOfSpawns > numberOfEnemies ? 1 : numberOfSpawns; //if there are more spawns than enemies then use a single spawn.
 
-        for (int i = 0; i < list.Count-1;)   
+        for (int i = 0; i < list.Count;)   
         {
             for( int j = 0; j < numberOfSpawns; j++)
             {
