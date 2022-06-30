@@ -25,19 +25,25 @@ public class GameController : MonoBehaviour
     void Update()
     {
 
-        //when there are no alive enemies
-        if (aliveEnemies[0] == null && aliveEnemies.Count==1)
-        {
-            StartCoroutine(EndWave());
-        }
+        
         
     }
 
     public void removeEnemy()
     {
+        
+
         //update alive Enemies (likely a better way)
         aliveEnemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
-        
+        aliveEnemies.RemoveAll(s => s == null);
+
+
+        //the last enemy has been desroyed (gets removed at end of frame)
+        if (aliveEnemies.Count == 1)
+        {
+            StartCoroutine(EndWave());
+        }
+
     }
 
     public IEnumerator TakeDamage(float damage)
@@ -115,9 +121,8 @@ public class GameController : MonoBehaviour
     IEnumerator EndWave()
     {
         waveNumber++;
+        yield return new WaitForSeconds(5);
         BuildWave(waveNumber);
-        yield return new WaitForSeconds(20);
-
-
+       
     }
 }
