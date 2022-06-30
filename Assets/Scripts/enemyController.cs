@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemyController : MonoBehaviour
 {
     public float speed = 20f;
-    public int health = 1;
+    public float health = 1;
     public bool hasShield = false;
     public float collideDamage = 12;
     private GameController game;
@@ -50,8 +50,16 @@ public class enemyController : MonoBehaviour
         //if shot decrease health
         if (collision.CompareTag("Shot"))
         {
-            health--;
-            Destroy(collision.gameObject);
+            //get the damage value of the shot
+            float damage = collision.gameObject.GetComponent<ShotStats>().damageOutput;
+            
+            health -= damage;   //subtract from health
+
+            if (health <= 0)
+            {
+                Destroy(collision.gameObject);
+            }
+            
         }
         //spawn back at the top
         else if (collision.CompareTag("Destination") || collision.CompareTag("Player"))
