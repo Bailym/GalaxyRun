@@ -56,7 +56,7 @@ public class GameController : MonoBehaviour
             //if health less than zero player is dead.
             if (playerHealth <= 0)
             {
-                Debug.Log("Dead!");
+                Destroy(player);
             }
             healthText.text = "Health: " + playerHealth;    //update UI
 
