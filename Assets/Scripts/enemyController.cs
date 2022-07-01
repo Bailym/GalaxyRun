@@ -50,6 +50,8 @@ public class enemyController : MonoBehaviour
         //if shot decrease health
         if (collision.CompareTag("Shot"))
         {
+            game.GetComponent<RunScore>().runShotsHit++;    //add hit shot to score counter
+
             //get the damage value of the shot
             float damage = collision.gameObject.GetComponent<ShotStats>().damageOutput;
             

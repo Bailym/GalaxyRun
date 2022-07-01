@@ -58,3 +58,4 @@ MonoBehaviour:
   - {fileID: 2786425687879785134, guid: f3a67f8c954b2fc4380a99fadfa1e188, type: 3}
   playerHealth: 100
   healthText: {fileID: 0}
+  playerInvulnerable: 0

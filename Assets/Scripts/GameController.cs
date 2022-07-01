@@ -13,9 +13,11 @@ public class GameController : MonoBehaviour
     public float playerHealth = 100f;
     public TextMeshProUGUI healthText;
     public bool playerInvulnerable;
+    private RunScore runScore;
     // Start is called before the first frame update
     void Start()
     {
+        runScore = GetComponent<RunScore>();
         healthText.text = "Health: " + playerHealth;
         BuildWave(waveNumber); 
         playerInvulnerable = false;
@@ -31,12 +33,15 @@ public class GameController : MonoBehaviour
 
     public void removeEnemy()
     {
-        
-
         //update alive Enemies (likely a better way)
         aliveEnemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
         aliveEnemies.RemoveAll(s => s == null);
 
+        //add killed enemy to score counter
+        if(waveNumber <= 5)
+        {
+            runScore.killsT1++;
+        }
 
         //the last enemy has been desroyed (gets removed at end of frame)
         if (aliveEnemies.Count == 1)
@@ -57,6 +62,7 @@ public class GameController : MonoBehaviour
             if (playerHealth <= 0)
             {
                 Destroy(player);
+                Debug.Log(runScore.CalculateScore());
             }
             healthText.text = "Health: " + playerHealth;    //update UI
 
@@ -80,7 +86,7 @@ public class GameController : MonoBehaviour
         int randOffset = Random.Range(1, 5);    //used to add variety to each waves numbers
 
         //choose a tier of enemies to add depending on round number.
-        if (n < 5)
+        if (n <= 5)
         {
             GameObject newEnemy;    //object to be added to round
 

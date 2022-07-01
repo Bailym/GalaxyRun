@@ -39,6 +39,8 @@ public class CombatController : MonoBehaviour
             
             //spawn the shot
             Instantiate(primaryShot, blasterPointLeft, Quaternion.identity);
+
+            game.GetComponent<RunScore>().runShotsUsed++;   //add to shots used
         }
         //if left click spawn a shot
         else if (Input.GetMouseButtonDown(1) && Time.time > rightNextShot)
@@ -47,7 +49,9 @@ public class CombatController : MonoBehaviour
             rightNextShot = Time.time + rightBlasterSpeed;// nextshot calculates when the next time player can shoot.
 
             //spawn the shot
-            Instantiate(secondaryShot, blasterPointRight, Quaternion.identity);
+            Instantiate(secondaryShot, blasterPointRight, Quaternion.identity); 
+
+            game.GetComponent<RunScore>().runShotsUsed++; //add to shots used
         }
     }
 
@@ -60,6 +64,7 @@ public class CombatController : MonoBehaviour
             float damageTaken = collision.gameObject.GetComponent<enemyController>().collideDamage;
             //send to gamemanager to deduct health
             StartCoroutine(game.TakeDamage(damageTaken));
+            
            
         }
 
