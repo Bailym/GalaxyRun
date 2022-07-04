@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -62,7 +63,8 @@ public class GameController : MonoBehaviour
             if (playerHealth <= 0)
             {
                 Destroy(player);
-                Debug.Log(runScore.CalculateScore());
+                PlayerPrefs.SetFloat("runScore", runScore.CalculateScore());
+                SceneManager.LoadScene("EndRun");
             }
             healthText.text = "Health: " + playerHealth;    //update UI
 
@@ -86,7 +88,7 @@ public class GameController : MonoBehaviour
         int randOffset = Random.Range(1, 5);    //used to add variety to each waves numbers
 
         //choose a tier of enemies to add depending on round number.
-        if (n <= 5)
+        if (n <= 100)
         {
             GameObject newEnemy;    //object to be added to round
 

@@ -9,23 +9,19 @@ public class RunScore : MonoBehaviour
     public float runShotsUsed;
     public float runShotsHit;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     //calculates the final score for a run
     public float CalculateScore()
     {
-        float accuracy = runShotsHit / runShotsUsed;
-        float score = killsT1 * accuracy;
+        runAccuracy = runShotsHit / runShotsUsed;
+        float score = killsT1 * runAccuracy;
 
         return score;
+    }
+
+    void OnDisable()
+    {
+        PlayerPrefs.SetFloat("killsT1", killsT1);
+        PlayerPrefs.SetFloat("runAccuracy", runAccuracy);
     }
 }
