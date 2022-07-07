@@ -3506,6 +3506,22 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1745619875}
+    - target: {fileID: 301515161096015339, guid: 7e4cde10579a309468329b1cbf400506, type: 3}
+      propertyPath: T1enemiesPool.Array.data[0]
+      value: 
+      objectReference: {fileID: 1979319868630741999, guid: 7ee55149791517048854a1dce07f372e, type: 3}
+    - target: {fileID: 301515161096015339, guid: 7e4cde10579a309468329b1cbf400506, type: 3}
+      propertyPath: T1enemiesPool.Array.data[1]
+      value: 
+      objectReference: {fileID: 1979319868630741999, guid: 7ee55149791517048854a1dce07f372e, type: 3}
+    - target: {fileID: 301515161096015339, guid: 7e4cde10579a309468329b1cbf400506, type: 3}
+      propertyPath: T1enemiesPool.Array.data[2]
+      value: 
+      objectReference: {fileID: 1979319868630741999, guid: 7ee55149791517048854a1dce07f372e, type: 3}
+    - target: {fileID: 301515161096015339, guid: 7e4cde10579a309468329b1cbf400506, type: 3}
+      propertyPath: T1enemiesPool.Array.data[3]
+      value: 
+      objectReference: {fileID: 1979319868630741999, guid: 7ee55149791517048854a1dce07f372e, type: 3}
     - target: {fileID: 301515161096015340, guid: 7e4cde10579a309468329b1cbf400506, type: 3}
       propertyPath: m_Name
       value: GameController

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -1998210799963074144}
   - component: {fileID: -2035187858470611158}
   - component: {fileID: 3600048472397366897}
+  - component: {fileID: 1089168678293029919}
   m_Layer: 6
   m_Name: Red Ship
   m_TagString: Enemy
@@ -97,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 1979319868630741999}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ffa4215a8c53b5a49a8f7499d29a87de, type: 2}
+  m_Controller: {fileID: 9100000, guid: f1260f79133e2ce42bc801a4854f7ee6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -171,6 +172,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18512653, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &1089168678293029919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979319868630741999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e86eee7adb91b2844afc36850e56e522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3061931738113759397
 GameObject:
   m_ObjectHideFlags: 0

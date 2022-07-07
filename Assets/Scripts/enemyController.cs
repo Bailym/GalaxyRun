@@ -57,11 +57,7 @@ public class enemyController : MonoBehaviour
             
             health -= damage;   //subtract from health
 
-            if (health <= 0)
-            {
-                Destroy(collision.gameObject);
-            }
-            
+            Destroy(collision.gameObject);  //destroy the shot so it doesnt pass through
         }
         //spawn back at the top
         else if (collision.CompareTag("Destination") || collision.CompareTag("Player"))
