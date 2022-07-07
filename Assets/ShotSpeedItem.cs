@@ -23,6 +23,8 @@ public class ShotSpeedItem : MonoBehaviour
             GameObject player = collision.gameObject;
 
             player.GetComponent<CombatController>().leftBlasterSpeed *= 0.75f;  //decrease shot time by 25 percent
+
+            Destroy(gameObject);
         }
     }
 }

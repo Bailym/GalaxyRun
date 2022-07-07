@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI healthText;
     public bool playerInvulnerable;
     private RunScore runScore;
+    public List<GameObject> T1ItemsPool;
+    private int numItemsOnScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +29,8 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        
-        
+        //used in ItemRoom
+        numItemsOnScreen = GameObject.FindGameObjectsWithTag("Item").Length;
     }
 
     public void removeEnemy()
@@ -87,8 +88,14 @@ public class GameController : MonoBehaviour
         aliveEnemies.Clear();
         int randOffset = Random.Range(1, 5);    //used to add variety to each waves numbers
 
+        //every five rounds
+        if (n % 5 == 0)
+        {
+            StartCoroutine(ItemRoom());
+        }
+
         //choose a tier of enemies to add depending on round number.
-        if (n <= 100)
+        else if (n < 100)
         {
             GameObject newEnemy;    //object to be added to round
 
@@ -100,8 +107,7 @@ public class GameController : MonoBehaviour
             }
 
         }
-
-        CommenceWave(aliveEnemies);
+        CommenceWave(aliveEnemies);  
     }
 
     void CommenceWave(List<GameObject> list)
@@ -132,5 +138,29 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(5);
         BuildWave(waveNumber);
        
+    }
+
+    IEnumerator ItemRoom()
+    {
+        player.transform.position = new Vector3(0,player.transform.position.y,player.transform.position.z);    //move player to the middle
+        int randItemNum = Random.Range(0, T1ItemsPool.Count);
+        Instantiate(T1ItemsPool[randItemNum], new Vector3(-0.8f,-1.5f, 1), Quaternion.identity);   //instantiate first item
+        T1ItemsPool.RemoveAt(randItemNum);
+
+        randItemNum = Random.Range(0, T1ItemsPool.Count);
+        Instantiate(T1ItemsPool[randItemNum], new Vector3(0.8f, -1.5f, 1), Quaternion.identity);   //instantiate second item
+        T1ItemsPool.RemoveAt(randItemNum);
+
+        yield return new WaitUntil(() => numItemsOnScreen == 1);    //wait until user choses an item
+
+        //destroy unselected items
+        List<GameObject> itemsInScene = new List<GameObject>(GameObject.FindGameObjectsWithTag("Item"));
+        for (int i = 0; i < itemsInScene.Count; i++)
+        {
+            Destroy(itemsInScene[i]);
+        }
+
+        waveNumber++;
+        BuildWave(waveNumber);
     }
 }

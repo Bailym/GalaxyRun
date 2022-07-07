@@ -8,6 +8,7 @@ TagManager:
   - Shot
   - Destination
   - Boundary
+  - Item
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &301515161096015340
+--- !u!1 &6847577657872820511
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 301515161096015338}
-  - component: {fileID: 301515161096015339}
+  - component: {fileID: 6847577657872820505}
+  - component: {fileID: 6847577657872820504}
+  - component: {fileID: 6568581321420871544}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -17,39 +18,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &301515161096015338
+--- !u!4 &6847577657872820505
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 301515161096015340}
+  m_GameObject: {fileID: 6847577657872820511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1918724, y: -0.82519937, z: -1.1085173}
+  m_LocalPosition: {x: -1.085679, y: -0.40639877, z: -1.1085173}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &301515161096015339
+--- !u!114 &6847577657872820504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 301515161096015340}
+  m_GameObject: {fileID: 6847577657872820511}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 511656f46dec13646a9c93af6d6bfc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waveNumber: 1
-  player: {fileID: 5551284273485224140, guid: 86d7d35ec75beb24a85b3c0b064f5c45, type: 3}
+  player: {fileID: 0}
   T1enemiesPool:
-  - {fileID: 2067815751436821089, guid: 2812cdb2da98d494aad2694a0e336985, type: 3}
-  - {fileID: 2067815751436821089, guid: 2812cdb2da98d494aad2694a0e336985, type: 3}
-  - {fileID: 2067815751436821089, guid: 2812cdb2da98d494aad2694a0e336985, type: 3}
-  - {fileID: 7058005112709916074, guid: 9360caed8fd2a814fba06644e98cb31c, type: 3}
+  - {fileID: 1979319868630741999, guid: 7ee55149791517048854a1dce07f372e, type: 3}
+  - {fileID: 1979319868630741999, guid: 7ee55149791517048854a1dce07f372e, type: 3}
+  - {fileID: 1979319868630741999, guid: 7ee55149791517048854a1dce07f372e, type: 3}
+  - {fileID: 1979319868630741999, guid: 7ee55149791517048854a1dce07f372e, type: 3}
   - {fileID: 1979319868630741999, guid: 7ee55149791517048854a1dce07f372e, type: 3}
   aliveEnemies: []
   spawnPoints:
@@ -59,3 +60,21 @@ MonoBehaviour:
   playerHealth: 100
   healthText: {fileID: 0}
   playerInvulnerable: 0
+  T1ItemsPool:
+  - {fileID: 6798095249867538427, guid: 17479362983de2b4d8e706987b4073e8, type: 3}
+--- !u!114 &6568581321420871544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847577657872820511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070c04b9af11e234eac94f2f8f0a4794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killsT1: 0
+  runAccuracy: 0
+  runShotsUsed: 0
+  runShotsHit: 0
