@@ -4902,7 +4902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ba4a684f9c7044ea2eb6160ec893e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotSpeed: 1
+  shotSpeed: 1.5
   damageOutput: 1
   pathType: Linear
 --- !u!50 &7825292168260213702
