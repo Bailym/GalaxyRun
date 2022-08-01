@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public int waveNumber = 1;
-    public GameObject player;
+    private GameObject player;
     public List<GameObject> T1enemiesPool;
     public List<GameObject> aliveEnemies;
     public List<GameObject> spawnPoints;
@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         runScore = GetComponent<RunScore>();
         healthText.text = "Health: " + playerHealth;
         BuildWave(waveNumber); 
@@ -142,14 +143,17 @@ public class GameController : MonoBehaviour
 
     IEnumerator ItemRoom()
     {
-        player.transform.position = new Vector3(0,player.transform.position.y,player.transform.position.z);    //move player to the middle
-        int randItemNum = Random.Range(0, T1ItemsPool.Count);
-        Instantiate(T1ItemsPool[randItemNum], new Vector3(-0.8f,-1.5f, 1), Quaternion.identity);   //instantiate first item
-        T1ItemsPool.RemoveAt(randItemNum);
+        List<GameObject> tempItems = new List<GameObject>(T1ItemsPool);
+        Vector3 playerPos = player.transform.position;
+        playerPos.x = 0;
+        player.transform.position = playerPos;
+        int randItemNum = Random.Range(0, tempItems.Count);
+        Instantiate(tempItems[randItemNum], new Vector3(-0.8f,-1.5f, 1), Quaternion.identity);   //instantiate first item
+        tempItems.RemoveAt(randItemNum);
 
-        randItemNum = Random.Range(0, T1ItemsPool.Count);
-        Instantiate(T1ItemsPool[randItemNum], new Vector3(0.8f, -1.5f, 1), Quaternion.identity);   //instantiate second item
-        T1ItemsPool.RemoveAt(randItemNum);
+        randItemNum = Random.Range(0, tempItems.Count);
+        Instantiate(tempItems[randItemNum], new Vector3(0.8f, -1.5f, 1), Quaternion.identity);   //instantiate second item
+        tempItems.RemoveAt(randItemNum);
 
         yield return new WaitUntil(() => numItemsOnScreen == 1);    //wait until user choses an item
 
