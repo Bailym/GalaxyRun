@@ -34,3 +34,9 @@ Gameplay
 
 ![Game2](https://github.com/Bailym/GalaxyRun/blob/main/images/Damage.gif?raw=true)
 
+![Game3](https://github.com/Bailym/GalaxyRun/blob/main/images/Gameplay.png?raw=true)
+
+![Game4](https://github.com/Bailym/GalaxyRun/blob/main/images/Gameplay%202.png?raw=true)
+
+
+
